@@ -32,7 +32,7 @@ try {
 }
 
 // Export Settings
-fw.getDocumentDOM().setExportOptions({ colorMode:"32 bit", exportFormat:"PNG", exportFilesStyle:"Images Only"});
+fw.getDocumentDOM().setExportOptions({ colorMode:"32 bit", exportFormat:"PNG", exportFilesStyle:"Images Only", macFileCreator: "", macFileType: "", name: "Filename"});
 
 // Canvas Color
 fw.getDocumentDOM().setDocumentCanvasColor("#ffffff00", true);

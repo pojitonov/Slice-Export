@@ -12,11 +12,26 @@ try {
 	var filename = "Copy Merged.jsf";
 
 		// load our utilitiy API, if necessary
-	try { jdlib.CopyMerged.handleCopyNewDocument.call; } catch (exception)
+	try { jdlib.CopyMerged.handleCopy.call; } catch (exception)
 		{ fw.runScript(fw.currentScriptDir + "/Merged Utilities.js"); }
 
-		// handleCopyNewDocument will determine what to do based on this script's filename
-	jdlib.CopyMerged.handleCopyNewDocument(filename);
+		// handleCopy will determine what to do based on this script's filename
+	jdlib.CopyMerged.handleCopy(filename);
+
+	var dom	= fw.getDocumentDOM(),
+		resolution = dom.resolution,
+		resolutionUnits = dom.resolutionUnits;
+
+	fw.createDocument();
+
+	dom	= fw.getDocumentDOM();
+
+	dom.setDocumentResolution({ pixelsPerUnit: resolution, units: resolutionUnits });
+
+	dom.clipPaste("do not resample");
+
+	dom.setDocumentCanvasSizeToDocumentExtents(true);
+
 })();
 
 } catch (exception) {
@@ -29,7 +44,7 @@ fw.getDocumentDOM().setDocumentCanvasSizeToDocumentExtents(true);
 
 // Export Settings
 
-fw.getDocumentDOM().setExportOptions({ colorMode:"32 bit", exportFormat:"PNG", exportFilesStyle:"Images Only"});
+fw.getDocumentDOM().setExportOptions({ colorMode:"32 bit", exportFormat:"PNG", exportFilesStyle:"Images Only", macFileCreator: "", macFileType: "", name: "Filename"});
 
 // Save Export
 fw.exportDocumentAs(null, null, null);

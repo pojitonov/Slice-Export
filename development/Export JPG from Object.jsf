@@ -40,7 +40,7 @@ var comp = prompt("Set JPEG compression in percentage (from 10 to 100):", 80);
 
 if (comp !== null && typeof(comp) === "number" && parseInt(comp) >= 10 && parseInt(comp) <= 100){
 
-fw.getDocumentDOM().setExportOptions({colorMode:"24 bit", exportFormat:"JPEG", jpegQuality:parseInt(comp), exportFilesStyle:"Images Only"});
+fw.getDocumentDOM().setExportOptions({colorMode:"24 bit", exportFormat:"JPEG", jpegQuality:parseInt(comp), exportFilesStyle:"Images Only", macFileCreator: "", macFileType: "", name: "Filename"});
 
 // Save Export
 fw.exportDocumentAs(null, null, null);

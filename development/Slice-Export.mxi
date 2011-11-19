@@ -13,11 +13,11 @@
 <product name="Fireworks" version="10" primary="true" />
 </products>
 
-<description href="http://pojitonov.github.com/iPhone-Symbols">
+<description href="http://pojitonov.github.com/Slice-Export">
 <![CDATA[Slice like Photoshop in Fireworks]]>
 </description>
 
-<update method="directlink" url="https://github.com/pojitonov/iPhone-Symbols/raw/master/updates/iPhone-Symbols.xml"/>
+<update method="directlink" url="https://github.com/pojitonov/Slice-Export/raw/master/updates/Slice-Export.xml"/>
 
 <files>
 

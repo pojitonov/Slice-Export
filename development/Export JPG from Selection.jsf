@@ -11,7 +11,7 @@ try {
 {
 		// first store the current script's filename, since if we need to load
 		// the JS file below, the fw.currentScriptFileName gets messed up
-	var filename = "Copy Merged into New Document - Locked Elements.jsf";
+	var filename = "Copy Merged.jsf";
 
 		// load our utilitiy API, if necessary
 	try { jdlib.CopyMerged.handleCopyNewDocument.call; } catch (exception)
@@ -25,7 +25,9 @@ try {
 	alert([exception, exception.lineNumber, exception.fileName].join("\n"));
 }
 
+// Document Settings
 fw.getDocumentDOM().setDocumentCanvasColor(cc);
+fw.getDocumentDOM().setDocumentCanvasSizeToDocumentExtents(true);
 
 // Export Settings
 var comp = prompt("Set JPEG compression in percentage (from 10 to 100):", 80);
